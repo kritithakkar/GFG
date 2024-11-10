@@ -1,0 +1,28 @@
+import java.util.*;
+import java.lang.*;
+
+public class Main
+{
+    public static int binary(int []arr,int element,int l,int r)
+    {
+        if(l<=r){
+            int mid= l +(r-l)/2;
+            if(arr[mid] == element)
+            return mid;
+            if(arr[mid] < element)
+            {
+                return binary(arr,element,mid-1,r);
+            }
+            else
+            return binary(arr,element,l,mid+1);
+        }
+        return -1;
+    }
+	public static void main(String[] args) {
+	    int arr[]= {1,55,33,77,22,88};
+	    int element = 77;
+	    int l =0;
+	    int r= arr.length-1;
+		System.out.println(binary(arr,element,l,r));
+	}
+}
