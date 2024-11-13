@@ -1,0 +1,37 @@
+import java.math.*;
+class Solution {
+    public static ArrayList<Integer> factorial(int n) {
+       BigInteger factorial = BigInteger.ONE;
+        for (int i = 2; i <= n; i++) {
+            factorial = factorial.multiply(BigInteger.valueOf(i));
+        }
+
+        String factorialString = factorial.toString();
+
+        ArrayList<Integer> digitList = new ArrayList<>();
+
+        for (char digitChar : factorialString.toCharArray()) {
+            digitList.add(Character.getNumericValue(digitChar));
+        }
+
+        return digitList;
+    }
+}
+
+///
+  int carry  = 0;
+        ArrayList<Integer> ans =new ArrayList<>();
+        ans.add(1);
+        for(int i =2;i<=N;i++){
+            for(int j = 0;j<ans.size();j++){
+                int temp = ans.get(j)*i+carry;
+                ans.set(j,temp%10);
+                carry = temp/10;
+            }
+            while(carry>0){
+                ans.add(carry%10);
+                carry = carry/10;
+            }
+        }
+        Collections.reverse(ans);
+        return ans;
