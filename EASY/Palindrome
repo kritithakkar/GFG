@@ -1,0 +1,47 @@
+public class Main
+{
+    public static void palindrome(int n)
+    {
+        int org =n;
+        int rev=0;
+        while(n>0)
+        {
+            int digit = n%10;
+            rev= rev*10+digit;
+            n = n/10;
+        }
+        if(rev == org)
+        System.out.println("Yes");
+        else
+        System.out.println("No");
+    }
+	public static void main(String[] args) {
+		palindrome(12321);
+	}
+}
+
+// 2 pointers
+
+public class Main
+{
+    public static void palindrome(int n)
+    {
+       String rev = Integer.toString(n);
+        int i=0;
+        int j = rev.length()-1;
+        while(i<j)
+        {
+            if(rev.charAt(i)!=rev.charAt(j))
+            {
+                System.out.println("No");
+                return;
+            }
+            i++;
+            j--;
+        }
+        System.out.println("Yes");
+    }
+	public static void main(String[] args) {
+		palindrome(123271);
+	}
+}
