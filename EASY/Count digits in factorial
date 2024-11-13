@@ -1,0 +1,12 @@
+class Solution{
+    static int facDigits(int N){
+        //code here
+        if(N<=1)
+        return 1;
+        double digitCount = 0;
+        for (int i = 2; i <= N; i++) {
+            digitCount += Math.log10(i);
+        }
+        return (int)(Math.floor(digitCount) + 1);
+    }
+}
