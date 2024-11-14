@@ -1,0 +1,44 @@
+class Solution {
+
+    public ArrayList<Integer> findMean(int arr[], int q[]) {
+
+        // Complete the function
+        ArrayList<Integer> s = new ArrayList<Integer>();
+        int n = q.length/2; // Since each query consists of two elements (l and r), the total number of queries is half the length of q
+        for(int i=0;i<n;i++)
+        {
+            int l = q[2*i];
+            int r = q[2*i+1];
+            int sum =0;
+            int count =0,mean=0;
+            for(int j=l;j<=r;j++)
+            {
+                sum += arr[j];
+                count++;
+            }
+            mean = sum/count;
+            s.add(mean);
+        }
+        return s;
+        
+    }
+}
+ ////
+class Solution {
+
+    public ArrayList<Integer> findMean(int arr[], int q[]) {
+
+        ArrayList<Integer>res=new ArrayList<Integer>();
+        for(int i=0;i<q.length;i+=2){
+            int l=q[i];
+            int r=q[i+1];
+            int sum=0;
+            for(int j=l;j<=r;j++){
+                sum+=arr[j];
+            }
+int count = r-l+1;
+            res.add(sum/count);
+        }
+        return res;
+    }
+}
