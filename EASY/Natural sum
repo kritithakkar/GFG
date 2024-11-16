@@ -1,0 +1,17 @@
+{
+    public int find(int n)
+    {
+        // code here
+        int i=1,sum=0;
+        while(i<=n)
+        {
+
+            sum+=i;
+            if(sum==n)
+            return i;
+            i++;
+        }
+        
+        return -1;
+    }
+}
