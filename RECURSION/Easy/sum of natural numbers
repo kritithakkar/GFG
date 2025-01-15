@@ -1,3 +1,25 @@
+Parametrized 
+public class Main
+{
+    public static void fun(int i,int sum)
+    {
+        if(i<1)
+        {
+            System.out.println(sum);
+            return;
+        }
+           fun(i-1,sum+i);
+        
+    }
+	public static void main(String[] args) {
+		int i=5;
+		int n=0;
+fun(i,n);	
+	}
+}
+
+
+Functional
 public class Main
 {
     public static int sum(int n)
