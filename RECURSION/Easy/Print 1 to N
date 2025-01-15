@@ -7,3 +7,14 @@ class Solution {
         System.out.print(N+" ");
     }
 }
+
+or
+ public static void fun(int i,int n)
+    {
+        if(i>n)
+        {
+            return;
+        }
+        System.out.print(i+" ");
+        fun(i+1,n);
+    }
