@@ -1,0 +1,40 @@
+public class Main
+{
+	public static double fun(double x,int n)
+	{
+		if(n==0)
+			return 1;
+		if(n<1)
+		return 1/fun(x,-n);
+		return x*fun(x,n-1);
+	}
+	public static void main(String[] args) {
+	    double x = 2;
+		int n = -2;
+		System.out.println(fun(x,n));
+
+	}
+}
+
+///////
+To avoid overflow 
+class Solution {
+    public double myPow(double x, int n) {
+        long exp = n; // Convert n to long to handle Integer.MIN_VALUE
+        if (exp < 0) {
+            x = 1 / x;
+            exp = -exp; // Avoid integer overflow
+        }
+        return fastPow(x, exp);
+    }
+
+    private double fastPow(double x, long n) {
+        if (n == 0)
+            return 1;
+        double half = fastPow(x, n / 2);
+        if (n % 2 == 0)
+            return half * half; // If n is even
+        else
+            return x * half * half; // If n is odd
+    }
+}
