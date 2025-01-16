@@ -1,0 +1,42 @@
+public class Main
+{
+	public static void fun1(int i)
+	{
+		if(i>5)
+			return;
+		System.out.print(i+" ");
+		fun1(i+1);
+	}
+	public static void fun(int n)
+	{
+		if(n<1)
+			return ;
+		System.out.print(n+" ");
+		fun(n-1);
+	}
+	public static void main(String[] args) {
+		int i=1;
+		int n = 5;
+		fun(n);
+		fun1(i);
+
+	}
+}
+
+/////
+public class Main
+{
+	public static void fun(int n)
+	{
+		if(n==0)
+			return ;
+		System.out.print(n+" ");
+		fun(n-1);
+		System.out.print(n+" ");
+	}
+	public static void main(String[] args) {
+		int n = 5;
+		fun(n);
+
+	}
+}
