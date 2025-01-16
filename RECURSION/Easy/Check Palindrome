@@ -1,0 +1,14 @@
+public class Main
+{
+    public static boolean fun(int i,String arr)
+    {
+        if(i>=arr.length()) return true;
+        if(arr.charAt(i) != arr.charAt(arr.length()-i-1))
+        return false;
+        return fun(i+1,arr);
+    }
+	public static void main(String[] args) {
+	    String arr= "madams";
+		System.out.println(fun(0,arr));
+	}
+}
