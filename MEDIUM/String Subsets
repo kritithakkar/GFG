@@ -1,0 +1,36 @@
+Given a string s of length n, find all the possible non-empty subsequences of the string s in lexicographically-sorted order.
+import java.util.*;
+
+class Solution {
+    public List<String> AllPossibleStrings(String s) {
+        List<String> ans = new ArrayList<>();
+        int n = s.length();
+        
+        // Iterate through all subsets (except empty subset if needed)
+        for (int i = 0; i < (1 << n); i++) {
+            StringBuilder d = new StringBuilder();
+            
+            for (int j = 0; j < n; j++) {
+                if ((i & (1 << j)) != 0) { // Check if j-th bit is set
+                    d.append(s.charAt(j)); // Append character at index j
+                }
+            }
+            
+            // Add non-empty subsets only
+            if (d.length() > 0) {
+                ans.add(d.toString());
+            }
+        }
+
+        // Sorting lexicographically as required in some problems
+        Collections.sort(ans);
+        
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        String s = "abc";
+        System.out.println(sol.AllPossibleStrings(s));
+    }
+}
